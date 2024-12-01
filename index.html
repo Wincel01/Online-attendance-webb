@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Attendance System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <!-- Login Section -->
+  <div class="container" id="login-section">
+    <h1>Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter your username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <label for="role">Role:</label>
+      <select id="role" required>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+    </form>
+  </div>
+
+  <!-- Registration Section -->
+  <div class="container" id="register-section" style="display: none;">
+    <h1>Register</h1>
+    <form id="register-form">
+      <label for="reg-username">Username:</label>
+      <input type="text" id="reg-username" placeholder="Choose a username" required>
+
+      <label for="reg-password">Password:</label>
+      <input type="password" id="reg-password" placeholder="Choose a password" required>
+
+      <label for="reg-role">Role:</label>
+      <select id="reg-role" required>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+
+      <button type="submit">Register</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </form>
+  </div>
+
+  <!-- Attendance Section -->
+  <div class="container" id="attendance-section" style="display: none;">
+    <h1>Welcome, <span id="user-role"></span> <span id="user-name"></span></h1>
+    <div id="class-section">
+      <h3>Select a Class</h3>
+      <select id="class-list">
+        <option value="Class A">Class A</option>
+        <option value="Class B">Class B</option>
+        <option value="Class C">Class C</option>
+      </select>
+    </div>
+    <div id="teacher-controls" style="display: none;">
+      <h3>Mark Attendance</h3>
+      <label for="student-list">Select Student:</label>
+      <select id="student-list"></select>
+
+      <label for="reason">Reason for Absence:</label>
+      <input type="text" id="reason" placeholder="Enter reason for absence">
+
+      <button id="mark-absent">Mark Absent</button>
+    </div>
+    <div id="student-controls" style="display: none;">
+      <h3>Your attendance for today is being tracked by your teacher.</h3>
+    </div>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
